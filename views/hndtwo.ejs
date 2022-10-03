@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HND II | NACOSS COURSE SYSTEM</title>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-wrapper text-center">
+            <h1 class="text-white">NACOSS COURSE SYSTEM</h1>
+        </div>
+        <nav class="navbar">
+            <p class="btn btn-primary"><a href="/" class="text-white">Home <i class="fas fa-home"></i></a></p>
+            <p class="btn btn-primary"><a href="/ndone" class="text-white">ND I <i class="fas fa-user"></i></a></p>
+            <p class="btn btn-primary"><a href="/ndtwo" class="text-white">ND II <i class="fas fa-user"></i></a></p>
+            <p class="btn btn-primary"><a href="/hndone" class="text-white">HND I <i class="fas fa-user"></i></a></p>
+            <p class="btn btn-outline-primary"><a href="/hndtwo" class="text-white">HND II <i
+                        class="fas fa-user"></i></a></p>
+        </nav>
+    </header>
+    <main class="container mt-5">
+        <div>
+            <h1>HND II</h1>
+        </div>
+        <div class="">
+            <p><b>First semester</b></p>
+        </div>
+        <% if(handouts.length) {%>
+            <table class="table table-responsive hover">
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>COURSE CODE</th>
+                        <th>COURSE TITLE</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% handouts.forEach((handout,i)=> {%>
+                        <% if(handout.term==="1" ) {%>
+                            <tr>
+                                <td>
+                                    <%= i + 1 %>
+                                </td>
+                                <td>
+                                    <%= handout.course_code %>
+                                </td>
+                                <td>
+                                    <%= handout.course_title %>
+                                </td>
+                                <td><a href="/download/<%= handout.file %>">Download <i
+                                            class="fas fa-arrow-down"></i></a>
+                                </td>
+                            </tr>
+                            <%}%>
+                                <%})%>
+                </tbody>
+            </table>
+            <%} else {%>
+                <div class="my-5">
+                    <h4>No handouts found!</h4>
+                </div>
+                <%}%>
+
+                    <hr class="hr">
+                    <div class="">
+                        <p><b>Second semester</b></p>
+                    </div>
+                    <% if(handouts.length) {%>
+                        <table class="table table-responsive hover">
+                            <thead>
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>COURSE CODE</th>
+                                    <th>COURSE TITLE</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% handouts.forEach((handout,i)=> {%>
+                                    <% if(handout.term==="2" ) {%>
+                                        <tr>
+                                            <td>
+                                                <%= i + 1 %>
+                                            </td>
+                                            <td>
+                                                <%= handout.course_code %>
+                                            </td>
+                                            <td>
+                                                <%= handout.course_title %>
+                                            </td>
+                                            <td><a href="/download/<%= handout.file %>">Download <i
+                                                        class="fas fa-arrow-down"></i></a></td>
+                                        </tr>
+                                        <%}%>
+                                            <%})%>
+                            </tbody>
+                        </table>
+                        <%} else {%>
+                            <div class="my-5">
+                                <h4>No handouts found!</h4>
+                            </div>
+                            <%}%>
+    </main>
+    <footer class="bg-light text-center p-2" style="height: 17vh;">
+        <h6>Powered By Hi-Tech</h6>
+        <p>&copy; 2022</p>
+    </footer>
+
+</body>
+
+</html>

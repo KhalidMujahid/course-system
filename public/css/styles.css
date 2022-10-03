@@ -1,0 +1,17 @@
+header{
+    background-image: url("../assets/image.jpeg");
+    height: 20vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 1rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+table{
+    text-align: center;
+}

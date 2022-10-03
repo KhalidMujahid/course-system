@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ADMIN DASHBOARD | NACOSS COURSE SYSTEM</title>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-wrapper text-center">
+            <h1 class="text-white">ADMIN NACOSS COURSE SYSTEM</h1>
+        </div>
+    </header>
+    <main class="container my-5 w-50 rounded">
+        <form action="/upload" method="post" class="border p-5 rounded" enctype="multipart/form-data">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>Add handout</h1>
+                <button class="logout btn btn-danger">Logout <i class="fas fa-power-off"></i></button>
+            </div>
+            <% if(message) {%>
+                <div class="alert alert-danger my-3">
+                    <p>
+                        <%= message %>
+                    </p>
+                </div>
+                <%}%>
+                    <div class="form-group mt-3">
+                        <input name="course_code" type="text" class="form-control" placeholder="Course code">
+                    </div>
+                    <div class="form-group mt-3">
+                        <select name="level" class="form-select">
+                            <option>Level</option>
+                            <option value="ndone">ND I</option>
+                            <option value="ndtwo">ND II</option>
+                            <option value="hndone">HND I</option>
+                            <option value="hndtwo">HND II</option>
+                        </select>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input name="course_title" type="text" class="form-control" placeholder="Course title">
+                    </div>
+                    <div class="form-group mt-3">
+                        <select name="term" class="form-select">
+                            <option>Term</option>
+                            <option value="1">First semester</option>
+                            <option value="2">Second semester</option>
+                        </select>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input name="file" type="file" class="form-control">
+                    </div>
+                    <div class="button-group mt-3">
+                        <button type="submit" class="btn btn-success">Upload <i class="fas fa-upload"></i></button>
+                    </div>
+        </form>
+    </main>
+    <footer class="bg-light text-center p-2" style="height: 17vh;">
+        <h6>Powered By Hi-Tech</h6>
+        <p>&copy; 2022</p>
+    </footer>
+</body>
+
+</html>

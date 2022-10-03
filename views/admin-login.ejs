@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ADMIN LOGIN | NACOSS COURSE SYSTEM</title>
+    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container my-5 w-50">
+        <% if(error) {%>
+            <form action="/auth" method="post" class="border p-5 rounded">
+                <div>
+                    <h1>Admin panel</h1>
+                </div>
+                <div class="alert alert-danger">
+                    <p>
+                        <%= error %>
+                    </p>
+                </div>
+                <div class="input-group mt-3">
+                    <input type="text" name="adminId" class="form-control" placeholder="admin id">
+                    <div class="input-text bg-secondary rounded p-2">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="input-group mt-3">
+                    <input type="text" name="adminPin" class="form-control" placeholder="admin password">
+                    <div class="input-text  bg-secondary rounded p-2">
+                        <i class="fas fa-key"></i>
+                    </div>
+                </div>
+                <div class="button-group mt-3">
+                    <button type="submit" class="btn btn-success">Login <i class="fas fa-key"></i></button>
+                </div>
+            </form>
+            <%} else {%>
+                <form action="/auth" method="post" class="border p-5 rounded">
+                    <div>
+                        <h1>Admin panel</h1>
+                    </div>
+                    <div class="input-group mt-3">
+                        <input name="adminId" type="text" class="form-control" placeholder="admin id">
+                        <div class="input-text bg-secondary rounded p-2">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="input-group mt-3">
+                        <input name="adminPin" type="text" class="form-control" placeholder="admin password">
+                        <div class="input-text  bg-secondary rounded p-2">
+                            <i class="fas fa-key"></i>
+                        </div>
+                    </div>
+                    <div class="button-group mt-3">
+                        <button type="submit" class="btn btn-success">Login <i class="fas fa-key"></i></button>
+                    </div>
+                </form>
+                <%}%>
+    </main>
+</body>
+
+</html>
